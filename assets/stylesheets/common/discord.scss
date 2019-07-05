@@ -1,0 +1,45 @@
+.discord {
+  .title {
+    font-size: 20px;
+    font-weight: 800;
+    margin-bottom: 10px;
+  }
+
+  .subtitle {
+    font-size: 18px;
+    font-weight: 800;
+    margin: 10px 0;
+  }
+
+  .buttons, .authorization {
+    display: inline-block;
+  }
+
+  .buttons {
+    margin-right: 10px;
+  }
+
+  .authorization-indicator {
+    display: inline-block;
+    border-radius: 50%;
+    height: 10px;
+    width: 10px;
+
+    &.authorized {
+      background-color: green;
+    }
+
+    &.not-authorized {
+      background-color: red;
+    }
+  }
+
+  .red-light {
+    background-color: red;
+    border-radius: 50%;
+  }
+
+  .jobs {
+    margin-top: 20px;
+  }
+}

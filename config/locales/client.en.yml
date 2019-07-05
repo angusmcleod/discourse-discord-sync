@@ -1,0 +1,19 @@
+en:
+  js:
+    discord:
+      title: "Discord"
+
+      authorization:
+        title: "Authorization"
+        authorize: "Authorize"
+
+      job:
+        title: "Jobs"
+        start: "Start Job"
+        started: "Job Started. It will take a few minutes to complete."
+        list: "Completed Jobs"
+        none: "No jobs completed."
+        completed: "{{name}} completed at {{completed_at}}"
+        group: "Group"
+        role: "Role"
+        sync_group_with_role: "Sync a Discourse Group with a Discord Role"
