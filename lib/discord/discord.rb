@@ -3,8 +3,6 @@ require 'excon'
 module Discord
   def self.request(type, path, body = nil)
 
-    puts "URL: https://discordapp.com/api/v6#{path}"
-
     connection = Excon.new(
       "https://discordapp.com/api/v6#{path}",
       :headers => {
