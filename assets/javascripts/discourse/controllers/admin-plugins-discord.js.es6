@@ -14,7 +14,7 @@ export default Ember.Controller.extend({
     authorize() {
       const discordUrl = "https://discordapp.com/api/oauth2/authorize";
       const clientId = Discourse.SiteSettings.discord_client_id;
-      window.location.href = discordUrl + `?client_id=${clientId}&scope=bot&permissions=268435456`;
+      window.location.href = discordUrl + `?client_id=${clientId}&scope=bot&permissions=8`;
     },
 
     startJob() {
