@@ -1,7 +1,7 @@
 require 'excon'
 
 module Discord
-  def self.request(type, path, body = nil)
+  def self.request(type, path, opts={})
 
     connection = Excon.new(
       "https://discordapp.com/api/v6#{path}",
@@ -17,12 +17,16 @@ module Discord
       method: type
     }
 
-    if body
-      params[:body] = body.to_json
+    if opts[:query]
+      params[:query] = opts[:query]
+    end
+
+    if opts[:body]
+      params[:body] = opts[:body].to_json
     end
 
     response = connection.request(params)
 
-    JSON.parse(response.body)
+    response.body.present? ? JSON.parse(response.body) : nil
   end
 end

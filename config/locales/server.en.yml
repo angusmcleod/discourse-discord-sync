@@ -4,6 +4,8 @@ en:
     discord_client_id: "Discord Client Id"
     discord_bot_token: "Discord Bot Token"
     discord_guild_id: "Discord Guild Id (aka Server Id)"
+    discord_sync_role_name: "Discord Sync Discord Role"
+    discord_sync_trust_level: "Discord Sync Discourse Trust Level"
 
     errors:
       discord_bot_token_required: "A Discord Client Id and Discord Bot Token is required to enable the Discord Plugin"

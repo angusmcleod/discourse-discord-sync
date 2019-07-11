@@ -8,12 +8,18 @@ en:
         authorize: "Authorize"
 
       job:
-        title: "Jobs"
+        title: "Sync a Discourse Trust Level with a Discord Role"
         start: "Start Job"
         started: "Job Started. It will take a few minutes to complete."
         list: "Completed Jobs"
         none: "No jobs completed."
         completed: "{{name}} completed at {{completed_at}}"
-        group: "Group"
+        trust_level: "Trust Level"
         role: "Role"
-        sync_group_with_role: "Sync a Discourse Group with a Discord Role"
+        sync:
+          title: "Syncing Discourse trust level {{trust_level}} Discord with role {{role}}"
+          users_added: "Discord users added"
+          users_removed: "Discord users removed"
+
+    user:
+      discord_username: "Discord Username"

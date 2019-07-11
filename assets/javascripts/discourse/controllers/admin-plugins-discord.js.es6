@@ -5,9 +5,9 @@ import { default as computed } from 'ember-addons/ember-computed-decorators';
 export default Ember.Controller.extend({
   notAuthorized: Ember.computed.not('model.authorized'),
 
-  @computed('group', 'job')
-  syncEnabled(group, job) {
-    return group && job;
+  @computed('trustLevel', 'job')
+  syncEnabled(trustLevel, job) {
+    return trustLevel && job;
   },
 
   actions: {
@@ -20,16 +20,8 @@ export default Ember.Controller.extend({
     startJob() {
       this.set('startingJob', true);
 
-      const group = this.get('group');
-      const role = this.get('role');
-
-      ajax('/discord/job/start', {
-        type: 'PUT',
-        data: {
-          group,
-          role
-        }
-      }).catch(popupAjaxError)
+      ajax('/discord/job/start', { type: 'PUT' })
+        .catch(popupAjaxError)
         .then(result => {
           if (result && result.success) {
             this.set('jobStarted', true);

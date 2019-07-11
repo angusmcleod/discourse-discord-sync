@@ -1,7 +1,7 @@
 class ::Discord::Job
-  def self.log_completion(name)
+  def self.log_completion(name, opts={})
     jobs = self.list
-    jobs = jobs.push({ name: name, completed_at: DateTime.now })
+    jobs = jobs.push({ name: name, completed_at: DateTime.now }.merge(opts))
     PluginStore.set('discord', 'jobs', jobs)
   end
 

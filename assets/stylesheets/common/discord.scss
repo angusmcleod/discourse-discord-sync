@@ -41,5 +41,11 @@
 
   .jobs {
     margin-top: 20px;
+
+    .job {
+      .users {
+        margin-left: 20px;
+      }
+    }
   }
 }

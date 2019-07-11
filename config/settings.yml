@@ -7,3 +7,5 @@ plugin:
     client: true
   discord_bot_token: ''
   discord_guild_id: ''
+  discord_sync_role_name: ''
+  discord_sync_trust_level: ''

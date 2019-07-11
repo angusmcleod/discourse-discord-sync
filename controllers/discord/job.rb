@@ -1,13 +1,6 @@
 class Discord::JobController < ::Admin::AdminController
   def start
-    Discord::Sync.start(job_params.to_h)
+    Discord::Sync.start()
     render json: success_json
-  end
-
-  def job_params
-    params.permit(
-      :group,
-      :role
-    )
   end
 end
