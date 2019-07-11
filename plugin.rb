@@ -1,5 +1,5 @@
-# name: discord
-# about: Integrate Discord with Discourse
+# name: Discourse Discord Sync
+# about: Sync properties between Discourse and Discord
 # version: 0.1
 # authors: Angus McLeod
 # url: https://github.com/angusmcleod/discord-plugin
