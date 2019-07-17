@@ -40,4 +40,5 @@ after_initialize do
   load File.expand_path('../controllers/discord/job.rb', __FILE__)
 
   register_editable_user_custom_field :discord_username if defined? register_editable_user_custom_field
+  whitelist_public_user_custom_field :discord_username if defined? whitelist_public_user_custom_field
 end
