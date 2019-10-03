@@ -1,5 +1,5 @@
 module Jobs
-  class DiscordSyncTrustLevelWithRole < Jobs::Scheduled
+  class DiscordSyncTrustLevelWithRole < ::Jobs::Scheduled
     every 24.hours
 
     def execute(args={})
