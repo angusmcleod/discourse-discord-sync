@@ -3,7 +3,9 @@ module Jobs
     every 24.hours
 
     def execute(args={})
-      return unless SiteSetting.discord_sync_role_name.present? &&
+      return unless SiteSetting.respond_to?(:discord_enabled) &&
+                    SiteSetting.discord_enabled &&
+                    SiteSetting.discord_sync_role_name.present? &&
                     SiteSetting.discord_sync_trust_level.present?
 
       guild = Discord.request('GET', "/guilds/#{SiteSetting.discord_guild_id}")
@@ -20,10 +22,10 @@ module Jobs
         .joins("LEFT JOIN user_custom_fields ucf ON users.id = ucf.user_id")
         .where("ucf.name = 'discord_username' AND ucf.value IS NOT NULL")
         .pluck("ucf.value")
-
+      
       add_users = non_role_users.select { |u| verified_usernames.include?(u['username']) }
       remove_users = role_users.select { |u| !verified_usernames.include?(u['username']) }
-
+      
       log_args = {
         role: SiteSetting.discord_sync_role_name,
         trust_level: SiteSetting.discord_sync_trust_level
