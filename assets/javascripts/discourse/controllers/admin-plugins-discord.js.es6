@@ -20,13 +20,18 @@ export default Ember.Controller.extend({
     startJob() {
       this.set('startingJob', true);
 
-      ajax('/discord/job/start', { type: 'PUT' })
+      ajax('/discord/admin/start', { type: 'PUT' })
         .catch(popupAjaxError)
         .then(result => {
           if (result && result.success) {
             this.set('jobStarted', true);
           }
         }).finally(() => this.set('startingJob', false));
+    },
+    
+    clearLogs() {
+      ajax('/discord/admin/clear', { type: 'POST' })
+        .catch(popupAjaxError)
     }
   }
 });

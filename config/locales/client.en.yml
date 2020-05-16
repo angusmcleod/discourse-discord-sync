@@ -16,6 +16,7 @@ en:
         completed: "{{name}} completed at {{completed_at}}"
         trust_level: "Trust Level"
         role: "Role"
+        clear: "Clear"
         sync:
           title: "Syncing Discourse trust level {{trust_level}} Discord with role {{role}}"
           users_added: "Discord users added"

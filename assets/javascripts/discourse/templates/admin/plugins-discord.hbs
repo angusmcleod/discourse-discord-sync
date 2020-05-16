@@ -4,6 +4,7 @@
   <div class='buttons'>
     {{d-button label="discord.authorization.authorize" action="authorize"}}
     {{d-button label="discord.job.start" action="startJob" actionParam="sync_trust_level_with_role" disabled=syncEnabled}}
+    {{d-button label="discord.job.clear" action="clearLogs"}}
     {{#if startingJob}}
       {{loading-spinner size="small"}}
     {{else}}

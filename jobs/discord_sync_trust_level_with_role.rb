@@ -43,7 +43,7 @@ module Jobs
 
       log_args[:remove_users] = remove_users.map { |u| u['username'] } if remove_users.any?
 
-      Discord::Job.log_completion('sync_trust_level_with_role', log_args)
+      Discord::Log.set('sync_trust_level_with_role', log_args)
     end
   end
 end

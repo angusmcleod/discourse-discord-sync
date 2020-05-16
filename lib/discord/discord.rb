@@ -29,4 +29,8 @@ module Discord
 
     response.body.present? ? JSON.parse(response.body) : nil
   end
+  
+  def self.sync(args={})
+    Jobs.enqueue(:discord_sync_trust_level_with_role, args)
+  end
 end

@@ -28,16 +28,15 @@ after_initialize do
 
   Discord::Engine.routes.draw do
     get 'admin' => "admin#index"
-    put "job/start" => "job#start"
+    put "admin/start" => "admin#start"
+    post "admin/clear" => "admin#clear"
     get 'authorization/callback' => "authorization#callback"
   end
 
   load File.expand_path('../jobs/discord_sync_trust_level_with_role.rb', __FILE__)
   load File.expand_path('../lib/discord/discord.rb', __FILE__)
-  load File.expand_path('../lib/discord/job.rb', __FILE__)
-  load File.expand_path('../lib/discord/sync.rb', __FILE__)
+  load File.expand_path('../lib/discord/log.rb', __FILE__)
   load File.expand_path('../controllers/discord/admin.rb', __FILE__)
-  load File.expand_path('../controllers/discord/job.rb', __FILE__)
 
   register_editable_user_custom_field :discord_username if defined? register_editable_user_custom_field
   whitelist_public_user_custom_field :discord_username if defined? whitelist_public_user_custom_field
