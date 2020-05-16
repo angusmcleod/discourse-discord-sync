@@ -19,23 +19,23 @@
   <div class="list">
     <div class="subtitle">{{i18n 'discord.job.list'}}</div>
 
-    {{#if model.jobs}}
-      {{#each model.jobs as |j|}}
+    {{#if model.logs}}
+      {{#each model.logs as |log|}}
         <div class="job">
-          {{{i18n 'discord.job.completed' name=(i18n 'discord.job.sync.title' trust_level=j.trust_level role=j.role) completed_at=(raw-date j.completed_at format="medium")}}}
+          {{{i18n 'discord.job.completed' name=(i18n 'discord.job.sync.title' trust_level=log.trust_level role=log.role) completed_at=(raw-date log.completed_at format="medium")}}}
           <div class="users">
-            {{#if j.add_users}}
+            {{#if log.add_users}}
               <div>{{i18n 'discord.job.sync.users_added'}}</div>
               <ul>
-                {{#each j.add_users as |username|}}
+                {{#each log.add_users as |username|}}
                   <li>{{username}}</li>
                 {{/each}}
               </ul>
             {{/if}}
-            {{#if j.remove_users}}
+            {{#if log.remove_users}}
               <div>{{i18n 'discord.job.sync.users_removed'}}</div>
               <ul>
-                {{#each j.remove_users as |username|}}
+                {{#each log.remove_users as |username|}}
                   <li>{{username}}</li>
                 {{/each}}
               </ul>
