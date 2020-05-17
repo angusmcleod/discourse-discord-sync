@@ -13,11 +13,7 @@ module Jobs
       discord_role = SiteSetting.discord_sync_role_name
       discord = ::DiscordSync::Discord
       
-      log("
-        Sync started.<br>
-        Discourse trust level: #{trust_level}.<br>
-        Discord role #{discord_role}
-      ")
+      log("Syncing Discourse trust level #{trust_level} with Discord role #{discord_role}.")
 
       guild = discord.request('GET', "/guilds/#{guild_id}")
       role = guild["roles"].select { |role| role['name'] == discord_role }.first
@@ -52,12 +48,6 @@ module Jobs
       if remove_users.any?
         log("Users removed from #{discord_role} role", users: remove_users.map { |u| u['username'] })
       end
-      
-      log("
-        Sync complete.<br>
-        Discord users with #{discord_role} role: #{role_users.count}.<br>
-        Discourse users with trust level #{trust_level} and Discord username: #{verified_usernames.count}
-      ")
     end
     
     def log(message, opts={})
