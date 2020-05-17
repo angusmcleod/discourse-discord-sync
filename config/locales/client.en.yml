@@ -1,26 +1,20 @@
 en:
   js:
-    discord:
-      title: "Discord"
+    discord_sync:
+      title: "Discord Sync"
+      controls: "Controls"
+      authorize: "Authorize"
+      start: "Start Sync"
+      started: "Sync started. It will take a few minutes to complete."
 
-      authorization:
-        title: "Authorization"
-        authorize: "Authorize"
-
-      job:
-        title: "Sync a Discourse Trust Level with a Discord Role"
-        start: "Start Job"
-        started: "Job Started. It will take a few minutes to complete."
-        list: "Completed Jobs"
-        none: "No jobs completed."
-        completed: "{{name}} completed at {{completed_at}}"
-        trust_level: "Trust Level"
-        role: "Role"
+      log:
+        title: Logs
+        none: "No logs"
+        refresh: "Refresh"
         clear: "Clear"
-        sync:
-          title: "Syncing Discourse trust level {{trust_level}} Discord with role {{role}}"
-          users_added: "Discord users added"
-          users_removed: "Discord users removed"
+        message: "Message"
+        users: "Users"
+        date: "Date"
 
     user:
       discord_username: "Discord Username"

@@ -1,12 +1,12 @@
 require 'excon'
 
-module Discord
+class DiscordSync::Discord
   def self.request(type, path, opts={})
 
     connection = Excon.new(
       "https://discordapp.com/api/v6#{path}",
       :headers => {
-        "Authorization" => "Bot #{SiteSetting.discord_bot_token}",
+        "Authorization" => "Bot #{SiteSetting.discord_sync_bot_token}",
         "Accept" => "application/json, */*",
         "Content-Type" => "application/json",
         "User-Agent" => "Development"
@@ -28,9 +28,5 @@ module Discord
     response = connection.request(params)
 
     response.body.present? ? JSON.parse(response.body) : nil
-  end
-  
-  def self.sync(args={})
-    Jobs.enqueue(:discord_sync_trust_level_with_role, args)
   end
 end

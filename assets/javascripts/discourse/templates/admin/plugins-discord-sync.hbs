@@ -1,0 +1,70 @@
+<div class="controls">
+  <div class="title">
+    {{i18n 'discord_sync.controls'}}
+  </div>
+
+  <div class='buttons'>
+    {{d-button label="discord_sync.authorize" action="authorize"}}
+    {{d-button label="discord_sync.start" action="startSync"}}
+    
+    {{#if startingSync}}
+      {{loading-spinner size="small"}}
+    {{else}}
+      {{#if syncStarted}}
+        {{i18n 'discord_sync.started'}}
+      {{/if}}
+    {{/if}}
+  </div>
+</div>
+
+<div class="logs">
+  <div class="title">
+    {{i18n 'discord_sync.log.title'}}
+  </div>
+  
+  <div class="buttons">
+    {{d-button label="discord_sync.log.refresh" action="refreshLogs"}}
+    {{d-button label="discord_sync.log.clear" action="clearLogs"}}
+  </div>
+  
+  <div class="list">
+    {{#if loading}}
+      {{loading-spinner size="small"}}
+    {{else}}
+      {{#if model.logs}}
+        <table>
+          <thead>
+            <tr>
+              <th>{{i18n 'discord_sync.log.message'}}</th>
+              <th>{{i18n 'discord_sync.log.users'}}</th>
+              <th>{{i18n 'discord_sync.log.date'}}</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each model.logs as |log|}}
+              <tr>
+                <td class="message">
+                  {{{log.message}}}
+                </td>
+                <td class="users">
+                  {{#if log.users}}
+                    {{#each log.users as |user|}}
+                      <span>{{user}} </span>
+                    {{/each}}
+                  {{else}}
+                    -
+                  {{/if}}
+                </td>
+                <td class="date">
+                  {{raw-date log.date}}
+                </td>
+              </tr>
+            {{/each}}
+          </tbody>
+        </table>
+      {{else}}
+        {{i18n 'discord_sync.log.none'}}
+      {{/if}}
+    {{/if}}
+  </div>
+</div>

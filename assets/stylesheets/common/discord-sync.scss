@@ -1,14 +1,8 @@
-.discord {
+.discord-sync {
   .title {
     font-size: 20px;
     font-weight: 800;
     margin-bottom: 10px;
-  }
-
-  .subtitle {
-    font-size: 18px;
-    font-weight: 800;
-    margin: 10px 0;
   }
 
   .buttons, .authorization {
@@ -39,13 +33,15 @@
     border-radius: 50%;
   }
 
-  .jobs {
+  .logs {
     margin-top: 20px;
-
-    .job {
-      .users {
-        margin-left: 20px;
-      }
+    
+    .list {
+      margin-top: 20px;
+    }
+    
+    .date {
+      white-space: nowrap;
     }
   }
 }

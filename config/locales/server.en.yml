@@ -1,11 +1,11 @@
 en:
   site_settings:
-    discord_enabled: "Enable Discord"
-    discord_client_id: "Discord Client Id"
-    discord_bot_token: "Discord Bot Token"
-    discord_guild_id: "Discord Guild Id (aka Server Id)"
+    discord_sync_enabled: "Enable Discord Sync"
+    discord_sync_client_id: "Discord Sync Client Id"
+    discord_sync_bot_token: "Discord Sync Bot Token"
+    discord_sync_guild_id: "Discord Sync Guild Id (aka Server Id)"
     discord_sync_role_name: "Discord Sync Discord Role"
     discord_sync_trust_level: "Discord Sync Discourse Trust Level"
 
     errors:
-      discord_bot_token_required: "A Discord Client Id and Discord Bot Token is required to enable the Discord Plugin"
+      discord_sync_bot_token_required: "A Discord Client Id and Discord Bot Token is required to enable the Discord Plugin"

@@ -1,12 +1,13 @@
 plugin:
-  discord_enabled:
-    default: true
+  discord_sync_enabled:
+    default: false
     client: true
-  discord_client_id:
+    validator: AllowDiscordSyncEnabledValidator
+  discord_sync_client_id:
     default: ''
     client: true
-  discord_bot_token: ''
-  discord_guild_id: ''
+  discord_sync_bot_token: ''
+  discord_sync_guild_id: ''
   discord_sync_role_name: ''
   discord_sync_trust_level:
     default: ''

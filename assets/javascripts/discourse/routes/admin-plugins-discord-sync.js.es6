@@ -3,10 +3,16 @@ import DiscourseRoute from "discourse/routes/discourse";
 
 export default DiscourseRoute.extend({
   model() {
-    return ajax('/discord/admin');
+    return ajax('/discord-sync/logs');
   },
 
   setupController(controller, model) {
     controller.set('model', model);
+  },
+  
+  actions: {
+    refresh() {
+      this.refresh();
+    }
   }
 });
