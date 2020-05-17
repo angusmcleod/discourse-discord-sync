@@ -7,7 +7,7 @@ class DiscordSync::Log
   end
 
   def self.list
-    [*PluginStore.get('discord_sync', 'logs')]
+    [*PluginStore.get('discord_sync', 'logs')].sort_by { |l| l["date"] }.reverse
   end
   
   def self.clear
