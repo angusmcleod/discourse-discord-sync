@@ -1,8 +1,10 @@
 import { ajax } from 'discourse/lib/ajax';
 import { popupAjaxError } from 'discourse/lib/ajax-error';
+import Controller from "@ember/controller";
+import { not } from "@ember/object/computed"
 
-export default Ember.Controller.extend({
-  notAuthorized: Ember.computed.not('model.authorized'),
+export default Controller.extend({
+  notAuthorized: not('model.authorized'),
 
   actions: {
     authorize() {
